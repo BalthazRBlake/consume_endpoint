@@ -1,8 +1,5 @@
 package org.dev.fhhf.consume_endpoint.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
 
     private String professionalHeadline;

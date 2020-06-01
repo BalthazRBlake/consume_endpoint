@@ -1,12 +1,11 @@
 package org.dev.fhhf.consume_endpoint.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Bio {
 
     private Person person;
-    private Strengths[] strengths;
+    private List<Strength> strengths;
 
     public Bio() {
     }
@@ -19,11 +18,11 @@ public class Bio {
         this.person = person;
     }
 
-    public Strengths[] getStrengths() {
+    public List<Strength> getStrengths() {
         return strengths;
     }
 
-    public void setStrengths(Strengths[] strengths) {
+    public void setStrengths(List<Strength> strengths) {
         this.strengths = strengths;
     }
 

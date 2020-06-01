@@ -1,13 +1,10 @@
 package org.dev.fhhf.consume_endpoint.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Strengths {
+public class Strength {
 
     private String name;
 
-    public Strengths() {
+    public Strength() {
     }
 
     public String getName() {
