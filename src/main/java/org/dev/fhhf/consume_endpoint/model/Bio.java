@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Bio {
 
     private Person person;
+    private Strengths[] strengths;
 
     public Bio() {
     }
@@ -16,6 +17,14 @@ public class Bio {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Strengths[] getStrengths() {
+        return strengths;
+    }
+
+    public void setStrengths(Strengths[] strengths) {
+        this.strengths = strengths;
     }
 
     @Override
