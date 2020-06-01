@@ -1,7 +1,7 @@
 package org.dev.fhhf.consume_endpoint.service;
 
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.dev.fhhf.consume_endpoint.model.BioObject;
+import org.dev.fhhf.consume_endpoint.model.Bio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -16,7 +16,7 @@ public class TorreApiService implements ConsumeApi {
     private RestTemplate restTemplate;
 
     @Override
-    public void getBioByUserName(String userName) {
+    public Bio getBioByUserName(String userName) {
 
         HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(
                 HttpClientBuilder.create().build());
@@ -24,11 +24,11 @@ public class TorreApiService implements ConsumeApi {
 
         String url = "https://bio.torre.co/api/bios/"+userName;
 
-        ResponseEntity<BioObject> response =
+        ResponseEntity<Bio> response =
                 restTemplate.exchange(url, HttpMethod.GET,
-                        null, new ParameterizedTypeReference<BioObject>() {});
+                        null, new ParameterizedTypeReference<Bio>() {});
 
         System.out.println("   :::   " + response.getBody());
-
+        return response.getBody();
     }
 }

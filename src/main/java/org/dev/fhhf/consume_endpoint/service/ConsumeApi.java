@@ -1,6 +1,8 @@
 package org.dev.fhhf.consume_endpoint.service;
 
+import org.dev.fhhf.consume_endpoint.model.Bio;
+
 public interface ConsumeApi {
 
-    void getBioByUserName(String userName);
+    Bio getBioByUserName(String userName);
 }
