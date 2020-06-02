@@ -27,7 +27,7 @@ public class TorreApiService implements ConsumeApi {
     }
 
     @Override
-    public People getUsersByPage(int offset, int size) {
+    public People getUsersByPage(int offset, int size, String name) {
 
         String url = "https://search.torre.co/people/_search/";
         url += "?offset=" + offset;
@@ -36,7 +36,8 @@ public class TorreApiService implements ConsumeApi {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> request = new HttpEntity<>("", headers);
+        String body = name.equals("*") ? "" : "{\"name\":{\"term\":\"" + name + "\"}}";
+        HttpEntity<String> request = new HttpEntity<>(body, headers);
 
         ResponseEntity<People> resp = restTemplate.postForEntity( url, request , People.class );
 

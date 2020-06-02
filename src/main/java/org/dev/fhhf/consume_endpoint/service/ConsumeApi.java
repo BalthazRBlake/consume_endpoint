@@ -6,5 +6,5 @@ import org.dev.fhhf.consume_endpoint.model.People;
 public interface ConsumeApi {
 
     Bio getBioByUserName(String userName);
-    People getUsersByPage(int offset, int size);
+    People getUsersByPage(int offset, int size, String name);
 }

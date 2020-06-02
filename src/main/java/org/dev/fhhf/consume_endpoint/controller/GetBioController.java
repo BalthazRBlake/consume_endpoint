@@ -21,9 +21,11 @@ public class GetBioController {
         return ResponseEntity.ok(bio);
     }
 
-    @GetMapping("/users/{offset}/{size}")
-    public ResponseEntity<People> getUsersByPage(@PathVariable("offset") int offset, @PathVariable("size") int size) {
-        People people = consumeApi.getUsersByPage(offset, size);
+    @GetMapping("/users/{offset}/{size}/{name}")
+    public ResponseEntity<People> getUsersByPage(@PathVariable("offset") int offset,
+                                                 @PathVariable("size") int size,
+                                                 @PathVariable("name") String name) {
+        People people = consumeApi.getUsersByPage(offset, size, name);
         return ResponseEntity.ok(people);
     }
 }
