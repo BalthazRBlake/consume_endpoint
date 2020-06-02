@@ -1,1 +1,1 @@
-web: java -jar target/web: java -jar target/SinglePageApp-0.0.1.jar
+web: java -jar target/consume_endpoint-0.0.1-SNAPSHOT.jar
